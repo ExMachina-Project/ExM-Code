@@ -1,0 +1,12 @@
+/target/
+node_modules/
+webui/dist/
+.exm-code/
+.env
+.env.*
+!.env.example
+*.log
+playwright-report/
+test-results/
+desktop/src-tauri/target/
+desktop/src-tauri/gen/

@@ -1,0 +1,25 @@
+[package]
+name = "exm-code-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Headless ExM Code API server"
+
+[dependencies]
+exm-code-core = { path = "../exm-code-core" }
+exm-code-runtime = { path = "../exm-code-runtime" }
+anyhow.workspace = true
+axum.workspace = true
+chrono.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+rusqlite.workspace = true
+tokio.workspace = true
+tempfile = "3"
+subtle.workspace = true
+tower-http.workspace = true
+uuid.workspace = true
+futures-util.workspace = true
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }

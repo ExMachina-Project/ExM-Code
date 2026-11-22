@@ -1,0 +1,18 @@
+[package]
+name = "exm-code-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "ExM Code headless Agent API command line"
+
+[[bin]]
+name = "exm-code"
+path = "src/main.rs"
+
+[dependencies]
+exm-code-core = { path = "../exm-code-core" }
+exm-code-server = { path = "../exm-code-server" }
+anyhow.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+tokio.workspace = true

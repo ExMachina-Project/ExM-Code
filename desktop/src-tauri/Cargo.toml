@@ -1,0 +1,26 @@
+[package]
+name = "exm-code-desktop"
+version = "0.1.0"
+edition = "2021"
+description = "Native ExM Code desktop and mobile client"
+
+[lib]
+name = "exm_code_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+exm-code-runtime = { path = "../../crates/exm-code-runtime" }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+
+[workspace]
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+opt-level = "s"

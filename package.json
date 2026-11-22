@@ -1,0 +1,31 @@
+{
+  "name": "exm-code",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ExMachina's lightweight, workflow-native coding agent",
+  "workspaces": ["webui", "desktop"],
+  "scripts": {
+    "dev": "npm run dev -w @exm-code/webui",
+    "build": "npm run build:webui && cargo build --release --workspace",
+    "build:webui": "npm run build -w @exm-code/webui",
+    "check": "npm run check -w @exm-code/webui && cargo check --workspace && cargo check --manifest-path desktop/src-tauri/Cargo.toml",
+    "test": "cargo test --workspace && cargo test --manifest-path desktop/src-tauri/Cargo.toml && npm run test -w @exm-code/webui",
+    "test:ui": "node scripts/ui-smoke.mjs",
+    "test:desktop": "node scripts/desktop-smoke.mjs",
+    "test:e2e": "cargo build -p exm-code-cli && npm run build:webui && node scripts/e2e.mjs",
+    "desktop": "npm run dev -w @exm-code/desktop",
+    "desktop:build": "npm run build -w @exm-code/desktop",
+    "mobile:android:init": "npm run android:init -w @exm-code/desktop",
+    "mobile:android:dev": "npm run android:dev -w @exm-code/desktop",
+    "mobile:android:build": "npm run android:build -w @exm-code/desktop",
+    "mobile:ios:init": "npm run ios:init -w @exm-code/desktop",
+    "mobile:ios:dev": "npm run ios:dev -w @exm-code/desktop",
+    "mobile:ios:build": "npm run ios:build -w @exm-code/desktop",
+    "serve": "cargo run -p exm-code-cli -- serve",
+    "agent": "cargo run -p exm-code-cli --"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.65.1"
+  }
+}

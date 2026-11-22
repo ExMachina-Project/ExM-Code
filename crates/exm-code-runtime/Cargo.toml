@@ -1,0 +1,19 @@
+[package]
+name = "exm-code-runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Shared local and server Agent runtime, sessions and approvals"
+
+[dependencies]
+exm-code-core = { path = "../exm-code-core" }
+chrono.workspace = true
+rusqlite.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+tempfile = "3"
+
+[dev-dependencies]
+axum.workspace = true

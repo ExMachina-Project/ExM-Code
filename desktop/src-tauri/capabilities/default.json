@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Native local project access and workspace selection.",
+  "windows": ["main"],
+  "permissions": ["core:default", "dialog:allow-open"]
+}

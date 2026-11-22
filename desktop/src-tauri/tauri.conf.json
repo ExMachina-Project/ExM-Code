@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ExM Code",
+  "version": "0.1.0",
+  "identifier": "dev.exmachina.exm-code",
+  "build": {
+    "beforeDevCommand": "npm --prefix .. run dev -w @exm-code/webui",
+    "beforeBuildCommand": "npm --prefix .. run build:webui",
+    "devUrl": "http://127.0.0.1:5174",
+    "frontendDist": "../../webui/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "ExM Code",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 760,
+        "minHeight": 600,
+        "center": true
+      }
+    ],
+    "withGlobalTauri": true,
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost http: https:; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png"],
+    "category": "DeveloperTool",
+    "shortDescription": "Native programming agent",
+    "longDescription": "A local-first coding agent with Goal, Spec, Plan and Code workflows."
+  }
+}
